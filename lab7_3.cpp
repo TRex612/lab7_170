@@ -2,6 +2,34 @@
 
 using namespace std;
 
+int adiff(int a,int b){
+  int c;
+  c = a-b ;
+  
+  if (c < 0) {
+    c=-c ;
+    if (c >= 180){
+      if (c%180 == 0){
+        c = 0 ;
+      }
+      else{
+        c = 180 - (c%180);
+      }
+    }
+    else{
+      c = c ;
+    }
+  }
+  else{
+    if (c>180){
+      c = c%180 ;
+    }
+    else{
+      c = c ;
+    }
+  } 
+  return c ; 
+}
 
 int main(){
   cout << adiff(180,270);
